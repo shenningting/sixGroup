@@ -12,7 +12,7 @@ use yii\captcha\CaptchaValidator;
 
 class LoginController extends Controller
 {
-   public function init()
+   /*public function init()
     {
         parent::init();
         $session = \YII::$app->session;
@@ -22,7 +22,7 @@ class LoginController extends Controller
             echo "<script>location.href='index.php?r=index/index'</script>";
             //$this-> redirect(array('index/index'));
         }
-    }
+    }*/
     /*
      *  加载登录页面
      */
