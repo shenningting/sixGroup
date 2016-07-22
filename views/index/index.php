@@ -111,6 +111,16 @@ function menuScroll(num){
                 <li><a href="index.php?r=reply/word"  target="right">文字回复</a></li>
                 <li><a href="index.php?r=reply/picture"  target="right">图文回复</a></li>
             </ul>
+            <h3> 菜单管理</h3>
+            <ul>
+                <li><a href="index.php?r=menu/main_menu"  target="right">创建主菜单</a></li>
+                <li><a href="index.php?r=menu/menu"  target="right">创建子菜单</a></li>
+                <li><a href="index.php?r=menu/go"  target="right">菜单生效</a></li>
+            </ul>
+            <h3> 用户管理</h3>
+            <ul>
+                <li><a href="index.php?r=users/show"  target="right">用户列表</a></li>
+            </ul>
        </div>
     </div>
     <div class="main">

@@ -81,7 +81,7 @@ class wechatCallbackapiTest
                 echo $resultStr;
             }else{
                 $keyword = trim($postObj->Content);
-
+                if($keyword!=""){
                 $textTpl = "<xml>
 							<ToUserName><![CDATA[%s]]></ToUserName>
 							<FromUserName><![CDATA[%s]]></FromUserName>
@@ -121,7 +121,17 @@ class wechatCallbackapiTest
 						echo $resultStr;
 					}
 				 }
-            }
+                    $url_lina="http://www.tuling123.com/openapi/api?key=a96836abc36511c7244e14a82ce380bd&info=$keyword";
+                    $json = file_get_contents($url_lina);
+                    $arr=json_decode($json,true);
+                    $contentStr = $arr['text'];
+                    $msgType = "text";
+                    $resultStr = sprintf($textTpl, $fromUsername, $toUsername, $time, $msgType, $contentStr);
+                    echo $resultStr;
+                }
+
+                }
+
         }else {
             echo "";
             exit;
