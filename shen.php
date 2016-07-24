@@ -8,23 +8,21 @@ include_once("./web/assets/abc.php");
 $pdo ->query("set names utf8");
 $rs = $pdo->query("SELECT * FROM we_account where atok ='$str'");
 $result_arr = $rs->fetchAll();
+//print_r($result_arr);die;
 foreach($result_arr as $val){
     $aid = $val['aid'];
     $token=$val['atoken'];
     $appid = $val['appid'];
     $appsecret = $val['appsecret'];
 }
-
 header('content-type:text');
 //define your token
 define("AID",$aid);
 define("TOKEN",$token);
 define("APPID",$appid);
-define("APPSECRET",appsecret);
+define("APPSECRET",$appsecret);
 $wechatObj = new wechatCallbackapiTest();
 $wechatObj->valid($pdo);
-
-
 
 class wechatCallbackapiTest
 {
@@ -36,7 +34,6 @@ class wechatCallbackapiTest
         //echo $this->getAccesstoken();
         if($this->checkSignature()){
             echo $echoStr;
-            $this->createMenu();
             $this->responseMsg($pdo);
             exit;
         }
@@ -57,15 +54,60 @@ class wechatCallbackapiTest
             $msgtype = $postObj->MsgType;
             $toUsername = $postObj->ToUserName;
             $time = time();
-
+            $textTpl = "<xml>
+							<ToUserName><![CDATA[%s]]></ToUserName>
+							<FromUserName><![CDATA[%s]]></FromUserName>
+							<CreateTime>%s</CreateTime>
+							<MsgType><![CDATA[%s]]></MsgType>
+							<Content><![CDATA[%s]]></Content>
+							<FuncFlag>0</FuncFlag>
+							</xml>";
+            $imageTpl = " <xml>
+                            <ToUserName><![CDATA[toUser]]></ToUserName>
+                            <FromUserName><![CDATA[fromUser]]></FromUserName>
+                            <CreateTime>12345678</CreateTime>
+                            <MsgType><![CDATA[image]]></MsgType>
+                            <Image>
+                            <MediaId><![CDATA[media_id]]></MediaId>
+                            </Image>
+                            </xml>";
             if($postObj->Event=="CLICK"){
-                $Accesstoken=$this->getAccesstoken();
-                $url="https://api.weixin.qq.com/cgi-bin/media/upload?access_token=".$Accesstoken."&type=image";
-                $data=array(
-                    "file"=>"@123.jpg"
-                );
-                $json=$this->curlPost($url,$data,"POST");
-                $arr=json_decode($json,true);
+                //获取城市名字
+                $ip = $_SERVER['SERVER_ADDR'];
+                $url = "http://api.jisuapi.com/ip/location?appkey=49f049d351201fa6&ip=$ip";
+                $ch = curl_init();   //1.初始化
+                curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+                curl_setopt($ch, CURLOPT_URL, $url); //2.请求地址
+                $tmpInfo = curl_exec($ch);//6.执行
+                $arr = json_decode($tmpInfo,true);
+                $city = $arr['result']['city'];
+                //获取天气情况
+                $url2 = "http://api.jisuapi.com/weather/query?appkey=49f049d351201fa6&city=$city";
+                $ch = curl_init();   //1.初始化
+                curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+                curl_setopt($ch, CURLOPT_URL, $url2); //2.请求地址
+                $tmpInfo = curl_exec($ch);//6.执行
+                $arr2 = json_decode($tmpInfo,true);
+                $weather = $arr2['result']['weather'];
+                $city = $arr2['result']['city'];
+                $updatetime = $arr2['result']['updatetime'];
+                $weather_str = "所在城市：".$city ."\n"."天气状况：".$weather ."\n"."更新时间：".$updatetime;
+                $msgType = "text";
+                $contentStr = $weather_str;
+                echo sprintf($textTpl, $fromUsername, $toUsername, $time, $msgType, $contentStr);
+                die;
+                /*$media_id = $_SESSION['medisID'];
+                if($media_id=='') {
+                    $Accesstoken = $this->getAccesstoken();
+                    $url = "https://api.weixin.qq.com/cgi-bin/media/upload?access_token=" . $Accesstoken . "&type=image";
+                    $data = array(
+                        "file" => "@./web/upload/28335_205.jpg"
+                    );
+                    $json = $this->curlPost($url, $data, "POST");
+                    $arr = json_decode($json, true);
+                    $media_id = $arr['media_id'];
+                    $_SESSION['medisID'] = $media_id;
+                }
                 $textTpl = "<xml>
                             <ToUserName><![CDATA[%s]]></ToUserName>
                             <FromUserName><![CDATA[%s]]></FromUserName>
@@ -76,104 +118,71 @@ class wechatCallbackapiTest
                             </Image>
                             </xml>";
                 $msgType = "image";
-                $contentStr = $arr['media_id'];
+                $contentStr = $media_id;
                 $resultStr = sprintf($textTpl, $fromUsername, $toUsername, $time, $msgType, $contentStr);
-                echo $resultStr;
+                echo $resultStr;*/
             }else{
                 $keyword = trim($postObj->Content);
-                if($keyword!=""){
-                $textTpl = "<xml>
-							<ToUserName><![CDATA[%s]]></ToUserName>
-							<FromUserName><![CDATA[%s]]></FromUserName>
-							<CreateTime>%s</CreateTime>
-							<MsgType><![CDATA[%s]]></MsgType>
-							<Content><![CDATA[%s]]></Content>
-							<FuncFlag>0</FuncFlag>
-							</xml>";
-                $imageTpl = " <xml>
-                            <ToUserName><![CDATA[toUser]]></ToUserName>
-                            <FromUserName><![CDATA[fromUser]]></FromUserName>
-                            <CreateTime>12345678</CreateTime>
-                            <MsgType><![CDATA[image]]></MsgType>
-                            <Image>
-                            <MediaId><![CDATA[media_id]]></MediaId>
-                            </Image>
-                            </xml>";
-                
-	$pdo->exec("set names ut8"); 
-	$sql = "select * from we_reply where retype=1 AND aid=".AID;
-	$result = $pdo -> query($sql) -> fetchAll(PDO::FETCH_ASSOC);
-	foreach($result as $k=>$v){
-		$data[$k]['keyword'] = explode('，',$v['rekeyword']);
-		$data[$k]['reid'] = $v['reid'];
-	}
-
-      foreach($data as $v){
-                    if(in_array($keyword,$v['keyword'])) {
-                        $sql1 = "select * from we_text_reply where reid=".$v['reid'];
-						$result1 = $pdo -> query($sql1) -> fetchAll(PDO::FETCH_ASSOC);
-                        $msgType = "text";
-						$rand = rand(0,count($result1)-1);
-                        $contentStr = $result1[$rand]['trcontent'];
-                        $resultStr = sprintf($textTpl, $fromUsername, $toUsername, $time, $msgType, $contentStr);   
+                if ($keyword != "") {
+                    //回复图文消息
+                    $sql = "select * from we_graphic_reply";
+                    $pdo->exec("set names ut8");
+                    $tu_data = $pdo->query($sql)->fetchAll(PDO::FETCH_ASSOC);
+                    foreach ($tu_data as $v) {
+                        if ($keyword == $v['rekeyword']) {
+                            $template = "<xml>
+                                <ToUserName><![CDATA[%s]]></ToUserName>
+                                <FromUserName><![CDATA[%s]]></FromUserName>
+                                <CreateTime>%s</CreateTime>
+                                <MsgType><![CDATA[%s]]></MsgType>
+                                <ArticleCount>1</ArticleCount>
+                                <Articles>
+                                <item>
+                                <Title><![CDATA[".$v['retitle']."]]></Title>
+                                <Description><![CDATA[".$v['grdesc']."]]></Description>
+                                <PicUrl><![CDATA[".'http://123.56.88.15/shen/sixGroup/web/upload/28335_205.jpg'."]]></PicUrl>
+                                <Url><![CDATA[".'http://www.baidu.com'."]]></Url>
+                                </item>
+                                </Articles>
+                                </xml> ";
+                            $resultStr = sprintf($template,$postObj->FromUserName, $postObj->ToUserName,time(),'news');
+                            if(!empty($resultStr)){
+                                echo $resultStr;
+                            }
+                        }
                     }
-					 if(!empty($resultStr)){
-						echo $resultStr;
-					}
-				 }
-                    $url_lina="http://www.tuling123.com/openapi/api?key=a96836abc36511c7244e14a82ce380bd&info=$keyword";
-                    $json = file_get_contents($url_lina);
-                    $arr=json_decode($json,true);
-                    $contentStr = $arr['text'];
+                    //关键字回复
+                    $sql = "select * from we_reply where retype=1 AND aid=" . AID;
+                    $result = $pdo->query($sql)->fetchAll(PDO::FETCH_ASSOC);
+                    foreach ($result as $k => $v) {
+                        $data[$k]['keyword'] = explode('，', $v['rekeyword']);
+                        $data[$k]['reid'] = $v['reid'];
+                    }
+                    foreach ($data as $v) {
+                        if (in_array($keyword, $v['keyword'])) {
+                            $sql1 = "select * from we_text_reply where reid=" . $v['reid'];
+                            $result1 = $pdo->query($sql1)->fetchAll(PDO::FETCH_ASSOC);
+                            $msgType = "text";
+                            $rand = rand(0, count($result1) - 1);
+                            $contentStr = $result1[$rand]['trcontent'];
+                            $resultStr = sprintf($textTpl, $fromUsername, $toUsername, $time, $msgType, $contentStr);
+                        }
+                        if (!empty($resultStr)) {
+                            echo $resultStr;
+                        }
+                    }
+                }else{
                     $msgType = "text";
+                    $contentStr = "欢迎关注，期待我的好作品";
                     $resultStr = sprintf($textTpl, $fromUsername, $toUsername, $time, $msgType, $contentStr);
                     echo $resultStr;
                 }
-
-                }
-
+          }
         }else {
             echo "";
             exit;
         }
     }
-
-    public function createMenu(){
-        $Accesstoken=$this->getAccesstoken();
-        $url=" https://api.weixin.qq.com/cgi-bin/menu/create?access_token=".$Accesstoken;
-
-        $data='{
-                 "button":[
-                 {
-                      "type":"click",
-                      "name":"我是帅哥",
-                      "key":"V1001_TODAY_MUSIC"
-                  },
-                  {
-                       "name":"菜单",
-                       "sub_button":[
-                       {
-                           "type":"view",
-                           "name":"搜索",
-                           "url":"http://www.soso.com/"
-                        },
-                        {
-                           "type":"view",
-                           "name":"视频",
-                           "url":"http://v.qq.com/"
-                        },
-                        {
-                           "type":"view",
-                           "name":"走你",
-                           "url":"https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx397a734f60e04b31&redirect_uri=http%3a%2f%2fsntsnt.applinzi.com%2ftemplate.php&response_type=code&scope=snsapi_userinfo&state=STATE#wechat_redirect"
-                        }]
-                   }]
-             }';
-        $html=$this->curlPost($url,$data,'POST');
-        return $html;
-
-    }
-
     private function getAccesstoken(){
         //return "aaa";
         $url="https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid=".APPID."&secret=".APPSECRET;

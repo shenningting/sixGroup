@@ -137,25 +137,30 @@ class MenuController extends Controller
         $url="https://api.weixin.qq.com/cgi-bin/menu/create?access_token=".$Accesstoken;
 
         $str = '';
-        foreach($data1 as $val) {
+    foreach($data1 as $val) {
+        $str .= '{';
+        $str .= '"name":"'.$val['main'].'",';
+        $str .= '"sub_button":[';
+        foreach ($val['brother'] as $v) {
             $str .= '{';
-            $str .= '"name":"'.$val['main'].'",';
-            $str .= '"sub_button":[';
-            foreach($val['brother'] as $v) {
-                $str .= '{';
-                $str .= '"type":"view",';
-                $str .= '"name":"'.$v['mname'].'",';
-                $str .= '"url":"'.$v['url'].'"';
-                $str .= '},';
-            }
-            $str .= ']';
-            $str .= '}';
+            $str .= '"type":"view",';
+            $str .= '"name":"'.$v['mname'].'",';
+            $str .= '"url":"http://www.soso.com/"';
+            $str .= '},';
         }
+        $str .= ']';
+        $str .= '}';
+    }
         $data = '{
-               "button":[
-                '.$str.'
-              ]
-         }';
+         "button":[
+         {
+              "type":"click",
+              "name":"看天气",
+              "key":"V1001_TODAY_MUSIC"
+          },
+          '.$str.'
+          ]
+    }';
         $html=$this->curlPost($url,$data,'POST');
         var_dump($html);
     }

@@ -20,7 +20,7 @@ class AccountController extends Controller
             $model->attributes=\Yii::$app->request->post();
 
             $atok=$this->actionRands(5);
-            $aurl=substr('http://'.$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'],0,strpos('http://'.$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'],'we'))."shen.php?gui=".$atok;
+            $aurl=substr('http://'.$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'],0,strpos('http://'.$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'],'six'))."sixGroup/shen.php?gui=".$atok;
             $session = \Yii::$app->session;
             $session->open();
             $model -> uid = $session->get('uid');
