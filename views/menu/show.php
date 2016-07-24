@@ -26,14 +26,14 @@ use yii\widgets\LinkPager;
         <div class="box span10 oh">
             <table width="100%" border="0" cellpadding="0" cellspacing="0" class="list_table">
                 <tr>
-                    <th width="100">公众号<?php echo $data['account'][0]['aid']?></th>
-                    <th width="100">主菜单</th>
-                    <th width="100">子菜单</th>
+                    <th width="200">公众号<?php echo $data['account'][0]['aid']?></th>
+                    <th width="200">主菜单</th>
+                    <th width="200">子菜单</th>
+                    <th width="200">管理</th>
                 </tr>
                 <?php foreach($data['account_data'] as $acc_val){?>
                     <tr class="tr">
                         <td class="td_center"><?php echo $acc_val['aname']?></td>
-
                             <td>
                                 <?php foreach($data['data1'] as $v){?>
                             <?php if($acc_val['aid']==$v['aid']){?>
@@ -41,7 +41,6 @@ use yii\widgets\LinkPager;
                             <?php }?>
                                 <?php }?>
                             </td>
-
                         <td>
                             <?php foreach($data['data1'] as $v){?>
                                 <?php if($acc_val['aid']==$v['aid']){?>
@@ -51,9 +50,11 @@ use yii\widgets\LinkPager;
                                 <?php }?>
                             <?php }?>
                         </td>
-                    </tr>
-                    <tr>
-                        <td><a href="javascript:void(0)" onclick="fun(this)" ids="<?php echo $acc_val['aid']?>">生成菜单</a></td>
+                        <td>
+                            <a href="index.php?r=menu">删除</a>
+                            <a href="">修改</a>
+                            <a href="javascript:void(0)" onclick="fun(this)" ids="<?php echo $acc_val['aid']?>">生成菜单</a>
+                        </td>
                     </tr>
                 <?php }?>
             </table>

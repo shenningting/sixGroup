@@ -34,9 +34,9 @@ use yii\widgets\LinkPager;
         <table width="100%" border="0" cellpadding="0" cellspacing="0" class="list_table">
             <tr>
                 <th width="200">昵称</th>
-                <th width="400">Api地址</th>
+                <th width="500">Api地址</th>
                 <th width="300">Token</th>
-                <th width="300">操作</th>
+                <th width="200">操作</th>
             </tr>
             <?php foreach($account_data as $k=>$v){?>
             <tr class="tr">
@@ -46,14 +46,12 @@ use yii\widgets\LinkPager;
                     <button class="btn btn82 btn_nochecked" onclick="copy2(<?php echo $k?>)">复制</button>
                 </td>
                 <td>
-
                     <input type="text" id="content1_<?php echo $k?>"  value="<?php echo $v['atoken']?>"/>
                     <span style="margin-left: 0" ><input type="button" name="button" onclick="copy1(<?php echo $k?>)" class="btn btn82 btn_nochecked" value="复制"></span>
                 </td>
                 <td>
                     <a href="index.php?r=account/del&aid=<?php echo $v['aid']?>"><input type="button" name="button" class="btn btn82 btn_del" value="删除"></a>
                     <a href="index.php?r=account/edit&aid=<?php echo $v['aid']?>"><input type="button" name="button" class="btn btn82 btn_add" value="修改"></a>
-                    <a href="index.php?r=replay/index&aid=<?php echo $v['aid']?>"><input type="button" name="button" class="btn btn82 btn_add" value="回复"></a>
                 </td>
             </tr>
             <?php }?>
@@ -71,17 +69,17 @@ use yii\widgets\LinkPager;
 </html>
 <script src="js/jq.js"></script>
 <script>
-    //alert($);
     function copy1(k)
     {
-        var Url=document.getElementById('content1_'+k);
+        var Url=document.getElementById("content1_"+k);
+        //alert(Url);
         Url.select(); // 选择对象
         document.execCommand("Copy"); // 执行浏览器复制命令
         alert("已复制好，可贴粘。");
     }
     function copy2(k)
     {
-        var Url=document.getElementById('content2_'+k);
+        var Url=document.getElementById("content2_"+k);
         Url.select(); // 选择对象
         document.execCommand("Copy"); // 执行浏览器复制命令
         alert("已复制好，可贴粘。");

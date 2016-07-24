@@ -99,7 +99,6 @@ function menuScroll(num){
           <ul>
              <li><a href="index.php?r=ip/ip_show"  target="right">ip限制</a></li>
              <li><a href="index.php?r=ip/add_ip"  target="right">ip添加</a></li>
-
           </ul>
           <h3> 公众号管理</h3>
           <ul>
@@ -109,17 +108,13 @@ function menuScroll(num){
             <h3> 基本功能</h3>
             <ul>
                 <li><a href="index.php?r=reply/word"  target="right">文字回复</a></li>
-                <li><a href="index.php?r=reply/picture"  target="right">图文回复</a></li>
+                <li><a href="index.php?r=replay/index"  target="right">图文回复</a></li>
             </ul>
             <h3> 菜单管理</h3>
             <ul>
-                <li><a href="index.php?r=menu/main_menu"  target="right">创建主菜单</a></li>
+                <li><a href="index.php?r=menu/main_menu"  target="right">主菜单管理</a></li>
                 <li><a href="index.php?r=menu/menu"  target="right">创建子菜单</a></li>
                 <li><a href="index.php?r=menu/go"  target="right">菜单生效</a></li>
-            </ul>
-            <h3> 用户管理</h3>
-            <ul>
-                <li><a href="index.php?r=users/show"  target="right">用户列表</a></li>
             </ul>
        </div>
     </div>
