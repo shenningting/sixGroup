@@ -16,14 +16,8 @@ class ReplayController extends Controller
      */
     public function actionIndex()
     {
-        $aid = yii::$app->request->get('aid');
-        $session = \YII::$app->session;
-        $session->open();
-        $rename = $session->get('uname');
-        $data['re'] = $rename;
-        $data['aid'] = $aid;
-        //print_r($data);die;
-        return $this->renderPartial('add_img',$data);
+        $account_data = Account::find() -> select('aname,aid') -> asArray() ->all();
+        return $this -> renderPartial('add_img',['account_data'=>$account_data]);
     }
 
     /*
@@ -48,7 +42,7 @@ class ReplayController extends Controller
                 unset($data['_csrf']);
                 $res = $connection->createCommand()->insert('we_graphic_reply',$data)->execute();
                 if($res>0){
-                    echo "<script>alert('添加成功');location='index.php?r=replay/index'</script>";
+                    echo "<script>alert('添加成功');location='index.php?r=replay/show'</script>";
                 }else{
                     echo "<script>alert('添加失败');location='index.php?r=replay/index'</script>";
                 }
@@ -59,4 +53,26 @@ class ReplayController extends Controller
             return $this->renderPartial('add_img');
         }
     }
+
+    /*
+     *  展示
+     */
+    public function actionShow()
+    {
+        $data = Graphic::find()->select('we_account.*,we_graphic_reply.*')->join('join','we_account','we_account.aid = we_graphic_reply.aid')->asArray()->all();
+        return $this -> renderPartial('show',['data'=>$data]);
+    }
+
+    /*
+     * 删除
+     */
+    public function actionDel()
+    {
+        $gid = \Yii::$app->request->get('gid');
+        $bool = Graphic::deleteAll('gid='.$gid);
+        if($bool>0){
+            $this -> redirect(array('show'));
+        }
+    }
+
 }

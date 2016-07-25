@@ -91,6 +91,18 @@ class MenuController extends Controller
         }
     }
 
+    /*
+     * 删除菜单
+     */
+    public function actionDel()
+    {
+        $aid = \Yii::$app->request->get('aid');
+        $bool = Menu::deleteAll('aid='.$aid);
+        if($bool>1){
+            $this -> redirect(array('go'));
+        }
+    }
+
     private function getAccesstoken($appid,$app){
         //return "aaa";
         $url="https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid=$appid&secret=$app";
@@ -162,7 +174,12 @@ class MenuController extends Controller
           ]
     }';
         $html=$this->curlPost($url,$data,'POST');
-        var_dump($html);
+        //var_dump($html);
+        $arr = json_decode($html);
+        //var_dump($arr);
+        if($arr->errmsg=='ok'){
+            echo 1;
+        }
     }
 
     public function curlPost($url,$data,$method){
