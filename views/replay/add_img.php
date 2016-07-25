@@ -51,7 +51,7 @@
 </head>
 
 <body>
-
+<h2 style="float: left"><a href="index.php?r=replay/show">回复规则管理</a></h2>
 <form action="index.php?r=replay/add_img" method="post"  enctype="multipart/form-data"  class="jqtransform">
 
     <table class="insert-tab" width="70%" height="470">
@@ -63,7 +63,6 @@
             <th><i class="require-red">*</i>标题：</th>
 
             <td>
-                <input type="hidden" name="aid" value="<?php echo $aid?>">
 
                 <input class="input-text lh30" id="title" name="retitle" size="50" value="" type="text" placeholder="回复标题">
 
@@ -76,17 +75,20 @@
         </tr>
 
         <tr>
-
-            <th>添加作者</th>
-
-            <td>
-
-                <input class="input-text lh30" name="rename" size="50"  type="text" value="<?php echo  $re;?>">
-
-                <span style="color: red"><?php if(!empty($error_data))echo $error_data['appid'][0]?></span>
-
+            <td class="td_right">公众号选项：</td>
+            <td class="">
+                    <span class="fl">
+                      <div class="select_border">
+                          <div class="select_containers ">
+                              <select name="aid" class="select">
+                                  <?php foreach($account_data as  $v){?>
+                                      <option value="<?php echo $v['aid']?>"><?php echo $v['aname']?></option>
+                                  <?php }?>
+                              </select>
+                          </div>
+                      </div>
+                    </span>
             </td>
-
         </tr>
 
         <tr>

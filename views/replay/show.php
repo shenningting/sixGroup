@@ -27,32 +27,21 @@ use yii\widgets\LinkPager;
             <table width="100%" border="0" cellpadding="0" cellspacing="0" class="list_table">
                 <tr>
                     <th width="200">公众号<?php echo $data['account'][0]['aid']?></th>
-                    <th width="200">主菜单</th>
-                    <th width="200">子菜单</th>
+                    <th width="200">标题</th>
+                    <th width="200">关键字</th>
+                    <th width="200">图片</th>
+                    <th width="200">描述</th>
                     <th width="200">管理</th>
                 </tr>
-                <?php foreach($data['account_data'] as $acc_val){?>
+                <?php foreach($data as $v){?>
                     <tr class="tr">
-                        <td class="td_center"><?php echo $acc_val['aname']?></td>
-                            <td>
-                                <?php foreach($data['data1'] as $v){?>
-                            <?php if($acc_val['aid']==$v['aid']){?>
-                                <?php echo $v['main']?>
-                            <?php }?>
-                                <?php }?>
-                            </td>
+                        <td class="td_center"><?php echo $v['aname']?></td>
+                         <td class="td_center"><?php echo $v['retitle']?></td>
+                         <td class="td_center"><?php echo $v['rekeyword']?></td>
+                         <td class="td_center"><img src="<?php echo $v['grurl']?>" alt="" width="50px" height="50px"/></td>
+                         <td class="td_center"><?php echo $v['grdesc']?></td>
                         <td>
-                            <?php foreach($data['data1'] as $v){?>
-                                <?php if($acc_val['aid']==$v['aid']){?>
-                                     <?php foreach($v['brother'] as $val){?>
-                                        <?php echo $val['mname']?>
-                                     <?php }?>
-                                <?php }?>
-                            <?php }?>
-                        </td>
-                        <td>
-                            <a href="index.php?r=menu/del&aid=<?php echo $acc_val['aid']?>">删除</a>
-                            <a href="javascript:void(0)" onclick="fun(this)" ids="<?php echo $acc_val['aid']?>">生成菜单</a>
+                            <a href="index.php?r=replay/del&gid=<?php echo $v['gid']?>">删除</a>
                         </td>
                     </tr>
                 <?php }?>
