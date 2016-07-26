@@ -105,6 +105,10 @@ function menuScroll(num){
               <li><a href="index.php?r=account/add"  target="right">添加公众号</a></li>
               <li><a href="index.php?r=account/show"  target="right">公众号展示</a></li>
           </ul>
+            <h3> 用户管理</h3>
+            <ul>
+                <li><a href="index.php?r=users/show"  target="right">用户列表展示</a></li>
+            </ul>
             <h3> 基本功能</h3>
             <ul>
                 <li><a href="index.php?r=reply/word"  target="right">文字回复</a></li>

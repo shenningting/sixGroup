@@ -10,7 +10,7 @@
 <body><div class="container">
 	<div class="header">
 		<h1>UCenter 安装向导</h1>
-		<span>V1.6.0 简体中文 UTF8 版 20110501</span>	<div class="setup step1">
+		<span>六组微信公众平台开发</span>	<div class="setup step1">
 		<h2>开始安装</h2>
 		<p>环境以及文件目录权限检查</p>
 	</div>

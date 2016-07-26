@@ -33,13 +33,10 @@ class UsersController extends Controller
         $query = Account::find();
         $list = $query->orderBy('aid')->where(['atok'=>$state])->asarray()->one();
         $url_utf ="https://api.weixin.qq.com/sns/oauth2/access_token?appid=".$list['appid']."&secret=".$list['appsecret']."&code=".$code."&grant_type=authorization_code";
-        // echo $url_utf;die;
-        echo file_get_contents($url_utf);die;
-        $arr_1 = json_decode(file_get_contents($url_utf),true);
-        // print_r($arr_1);die;
-        $url_op = "https://api.weixin.qq.com/sns/userinfo?access_token=".$arr_1[' access_token ']."&openid=".$arr_1['openid']."&lang=zh_CN";
+        $str = file_get_contents($url_utf);
+        $arr_1 = json_decode($str,true);
+        $url_op = "https://api.weixin.qq.com/sns/userinfo?access_token=".$arr_1['access_token']."&openid=".$arr_1['openid']."&lang=zh_CN";
         $list_open = json_decode(file_get_contents($url_op),true);
-         print_r($list_open);die;
         return $this -> renderPartial('ufo',array('list_open'=>$list_open));
         // https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx1bebcfb505f84419&redirect_uri=http%3a%2f%2f123.56.88.15%2ftest%2fsixGroup%2fweb%2findex.php%3fr%3dusers%2fufo&response_type=code&scope=snsapi_userinfo&state=351fq#wechat_redirect
     }

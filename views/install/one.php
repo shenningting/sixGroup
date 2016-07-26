@@ -17,21 +17,21 @@
 <body><div class="container">
 	<div class="header">
 		<h1>UCenter 安装向导</h1>
-		<span>V1.6.0 简体中文 UTF8 版 20110501</span></div>
+		<span>六组微信公众平台开发</span></div>
 <div class="main" style="margin-top:-123px;">
 	<div class="licenseblock"><div class="license"><h1>中文版授权协议 适用于中文用户</h1>
 
-<p>版权所有 (c) 2001-2011，北京康盛新创科技有限责任公司保留所有权利。</p>
+<p>版权所有 (c) 2001-2011，1409phpB六组保留所有权利。</p>
 
 <p>感谢您选择 UCenter 产品。希望我们的努力能为您提供一个高效快速和强大的站点解决方案。</p>
 
-<p>北京康盛新创科技有限责任公司为 UCenter 产品的开发商，依法独立拥有 UCenter 产品著作权。北京康盛新创科技有限责任公司网址为
+<p> 1409phpB六组为 UCenter 产品的开发商，依法独立拥有 UCenter 产品著作权。1499phpB六组网址为
  http://www.comsenz.com，UCenter 官方网站网址为 http://www.discuz.com，UCenter 
-官方讨论区网址为 http://www.discuz.net。</p>
+官方讨论区网址为 http://www.sixGroup.com。</p>
 
 <p>UCenter 著作权已在中华人民共和国国家版权局注册，著作权受到法律和国际公约保护。使用者：无论个人或组织、盈利与否、用途如何（包括以学习和研究为目的），均需仔细阅读本协议，在理解、同意、并遵守本协议的全部条款后，方可开始使用 UCenter 软件。</p>
 
-<p>本授权协议适用且仅适用于 UCenter 1.x 版本，北京康盛新创科技有限责任公司拥有对本授权协议的最终解释权。</p>
+<p>本授权协议适用且仅适用于 UCenter 1.x 版本,1409phpB六组拥有对本授权协议的最终解释权。</p>
 
 <h3>I. 协议许可的权利</h3>
 <ol>

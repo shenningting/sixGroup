@@ -26,7 +26,27 @@
     <table>
         <tr>
             <td>
-
+                <p><b>昵称:</b><?php echo $list_open['nickname']; ?></p>
+                <p><b>性别:</b>
+                    <?php
+                    if($list_open['sex']==1)
+                    {
+                        echo "男";
+                    }
+                    else if($list_open['sex']==2)
+                    {
+                        echo "女";
+                    }
+                    else
+                    {
+                        echo "保密";
+                    }
+                    ?>
+                </p>
+                <p><b>所在国家:</b><?php echo $list_open['country']; ?></p>
+                <p><b>省:</b><?php echo $list_open['province']; ?></p>
+                <p><b>市:</b><?php echo $list_open['city']; ?></p>
+                <p><b>头像:</b><img src="<?php echo $list_open['headimgurl']; ?>" width="100px" alt="头像"></p>
             </td>
         </tr>
     </table>

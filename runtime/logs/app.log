@@ -1,0 +1,412 @@
+2016-07-25 23:25:59 [114.249.224.175][-][-][warning][yii\web\Session::init] Session is already started
+    in /usr/share/nginx/html/sixGroup/controllers/LoginController.php:42
+2016-07-25 23:25:59 [114.249.224.175][-][-][info][application] $_GET = [
+    'r' => 'login/vcode'
+]
+
+$_COOKIE = [
+    '_csrf' => '1bbb9697c9ebcb7d483c51e83a77e060d297613f064caa0e086a50750e06c6eba:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"0Og4lVgLkZjwSeonYLm3i3z30TcUvxNh\";}'
+]
+
+$_SESSION = [
+    'code' => 'xDWi'
+]
+
+$_SERVER = [
+    'USER' => 'apache'
+    'HOME' => '/usr/share/httpd'
+    'FCGI_ROLE' => 'RESPONDER'
+    'SCRIPT_FILENAME' => '/usr/share/nginx/html//sixGroup/web/index.php'
+    'QUERY_STRING' => 'r=login/vcode'
+    'REQUEST_METHOD' => 'GET'
+    'CONTENT_TYPE' => ''
+    'CONTENT_LENGTH' => ''
+    'SCRIPT_NAME' => '/sixGroup/web/index.php'
+    'REQUEST_URI' => '/sixGroup/web/index.php?r=login/vcode'
+    'DOCUMENT_URI' => '/sixGroup/web/index.php'
+    'DOCUMENT_ROOT' => '/etc/nginx/html'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_SCHEME' => 'http'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_SOFTWARE' => 'nginx/1.10.1'
+    'REMOTE_ADDR' => '114.249.224.175'
+    'REMOTE_PORT' => '49920'
+    'SERVER_ADDR' => '123.56.88.15'
+    'SERVER_PORT' => '80'
+    'SERVER_NAME' => 'localhost'
+    'REDIRECT_STATUS' => '200'
+    'HTTP_HOST' => '123.56.88.15'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:47.0) Gecko/20100101 Firefox/47.0'
+    'HTTP_ACCEPT' => '*/*'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_REFERER' => 'http://123.56.88.15/sixGroup/web/index.php?r=login%2Findex'
+    'HTTP_COOKIE' => '_csrf=1bbb9697c9ebcb7d483c51e83a77e060d297613f064caa0e086a50750e06c6eba%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%220Og4lVgLkZjwSeonYLm3i3z30TcUvxNh%22%3B%7D'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'PHP_SELF' => '/sixGroup/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1469489159.5278
+    'REQUEST_TIME' => 1469489159
+]
+2016-07-25 23:26:13 [114.249.224.175][-][-][warning][yii\web\Session::init] Session is already started
+    in /usr/share/nginx/html/sixGroup/controllers/LoginController.php:42
+2016-07-25 23:26:13 [114.249.224.175][-][-][info][application] $_GET = [
+    'r' => 'login/vcode'
+]
+
+$_COOKIE = [
+    '_csrf' => '1bbb9697c9ebcb7d483c51e83a77e060d297613f064caa0e086a50750e06c6eba:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"0Og4lVgLkZjwSeonYLm3i3z30TcUvxNh\";}'
+    'PHPSESSID' => '308lvr4mv4eep22bcckvds1u95'
+]
+
+$_SESSION = [
+    'code' => 'bGEh'
+    '__flash' => []
+]
+
+$_SERVER = [
+    'USER' => 'apache'
+    'HOME' => '/usr/share/httpd'
+    'FCGI_ROLE' => 'RESPONDER'
+    'SCRIPT_FILENAME' => '/usr/share/nginx/html//sixGroup/web/index.php'
+    'QUERY_STRING' => 'r=login/vcode'
+    'REQUEST_METHOD' => 'GET'
+    'CONTENT_TYPE' => ''
+    'CONTENT_LENGTH' => ''
+    'SCRIPT_NAME' => '/sixGroup/web/index.php'
+    'REQUEST_URI' => '/sixGroup/web/index.php?r=login/vcode'
+    'DOCUMENT_URI' => '/sixGroup/web/index.php'
+    'DOCUMENT_ROOT' => '/etc/nginx/html'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_SCHEME' => 'http'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_SOFTWARE' => 'nginx/1.10.1'
+    'REMOTE_ADDR' => '114.249.224.175'
+    'REMOTE_PORT' => '49920'
+    'SERVER_ADDR' => '123.56.88.15'
+    'SERVER_PORT' => '80'
+    'SERVER_NAME' => 'localhost'
+    'REDIRECT_STATUS' => '200'
+    'HTTP_HOST' => '123.56.88.15'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:47.0) Gecko/20100101 Firefox/47.0'
+    'HTTP_ACCEPT' => '*/*'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_REFERER' => 'http://123.56.88.15/sixGroup/web/index.php?r=login/index'
+    'HTTP_COOKIE' => '_csrf=1bbb9697c9ebcb7d483c51e83a77e060d297613f064caa0e086a50750e06c6eba%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%220Og4lVgLkZjwSeonYLm3i3z30TcUvxNh%22%3B%7D; PHPSESSID=308lvr4mv4eep22bcckvds1u95'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'PHP_SELF' => '/sixGroup/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1469489173.4168
+    'REQUEST_TIME' => 1469489173
+]
+2016-07-25 23:26:14 [114.249.224.175][-][-][warning][yii\web\Session::init] Session is already started
+    in /usr/share/nginx/html/sixGroup/controllers/LoginController.php:42
+2016-07-25 23:26:14 [114.249.224.175][-][-][info][application] $_GET = [
+    'r' => 'login/vcode'
+    'rand' => '0.21750033147325487'
+]
+
+$_COOKIE = [
+    '_csrf' => '1bbb9697c9ebcb7d483c51e83a77e060d297613f064caa0e086a50750e06c6eba:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"0Og4lVgLkZjwSeonYLm3i3z30TcUvxNh\";}'
+    'PHPSESSID' => '308lvr4mv4eep22bcckvds1u95'
+]
+
+$_SESSION = [
+    'code' => 'n3yn'
+    '__flash' => []
+]
+
+$_SERVER = [
+    'USER' => 'apache'
+    'HOME' => '/usr/share/httpd'
+    'FCGI_ROLE' => 'RESPONDER'
+    'SCRIPT_FILENAME' => '/usr/share/nginx/html//sixGroup/web/index.php'
+    'QUERY_STRING' => 'r=login/vcode&rand=0.21750033147325487'
+    'REQUEST_METHOD' => 'GET'
+    'CONTENT_TYPE' => ''
+    'CONTENT_LENGTH' => ''
+    'SCRIPT_NAME' => '/sixGroup/web/index.php'
+    'REQUEST_URI' => '/sixGroup/web/index.php?r=login/vcode&rand=0.21750033147325487'
+    'DOCUMENT_URI' => '/sixGroup/web/index.php'
+    'DOCUMENT_ROOT' => '/etc/nginx/html'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_SCHEME' => 'http'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_SOFTWARE' => 'nginx/1.10.1'
+    'REMOTE_ADDR' => '114.249.224.175'
+    'REMOTE_PORT' => '49920'
+    'SERVER_ADDR' => '123.56.88.15'
+    'SERVER_PORT' => '80'
+    'SERVER_NAME' => 'localhost'
+    'REDIRECT_STATUS' => '200'
+    'HTTP_HOST' => '123.56.88.15'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:47.0) Gecko/20100101 Firefox/47.0'
+    'HTTP_ACCEPT' => '*/*'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_REFERER' => 'http://123.56.88.15/sixGroup/web/index.php?r=login/index'
+    'HTTP_COOKIE' => '_csrf=1bbb9697c9ebcb7d483c51e83a77e060d297613f064caa0e086a50750e06c6eba%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%220Og4lVgLkZjwSeonYLm3i3z30TcUvxNh%22%3B%7D; PHPSESSID=308lvr4mv4eep22bcckvds1u95'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'PHP_SELF' => '/sixGroup/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1469489174.875
+    'REQUEST_TIME' => 1469489174
+]
+2016-07-25 23:26:15 [114.249.224.175][-][-][warning][yii\web\Session::init] Session is already started
+    in /usr/share/nginx/html/sixGroup/controllers/LoginController.php:42
+2016-07-25 23:26:15 [114.249.224.175][-][-][info][application] $_GET = [
+    'r' => 'login/vcode'
+    'rand' => '0.7962027098780853'
+]
+
+$_COOKIE = [
+    '_csrf' => '1bbb9697c9ebcb7d483c51e83a77e060d297613f064caa0e086a50750e06c6eba:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"0Og4lVgLkZjwSeonYLm3i3z30TcUvxNh\";}'
+    'PHPSESSID' => '308lvr4mv4eep22bcckvds1u95'
+]
+
+$_SESSION = [
+    'code' => 'mEH7'
+    '__flash' => []
+]
+
+$_SERVER = [
+    'USER' => 'apache'
+    'HOME' => '/usr/share/httpd'
+    'FCGI_ROLE' => 'RESPONDER'
+    'SCRIPT_FILENAME' => '/usr/share/nginx/html//sixGroup/web/index.php'
+    'QUERY_STRING' => 'r=login/vcode&rand=0.7962027098780853'
+    'REQUEST_METHOD' => 'GET'
+    'CONTENT_TYPE' => ''
+    'CONTENT_LENGTH' => ''
+    'SCRIPT_NAME' => '/sixGroup/web/index.php'
+    'REQUEST_URI' => '/sixGroup/web/index.php?r=login/vcode&rand=0.7962027098780853'
+    'DOCUMENT_URI' => '/sixGroup/web/index.php'
+    'DOCUMENT_ROOT' => '/etc/nginx/html'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_SCHEME' => 'http'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_SOFTWARE' => 'nginx/1.10.1'
+    'REMOTE_ADDR' => '114.249.224.175'
+    'REMOTE_PORT' => '49920'
+    'SERVER_ADDR' => '123.56.88.15'
+    'SERVER_PORT' => '80'
+    'SERVER_NAME' => 'localhost'
+    'REDIRECT_STATUS' => '200'
+    'HTTP_HOST' => '123.56.88.15'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:47.0) Gecko/20100101 Firefox/47.0'
+    'HTTP_ACCEPT' => '*/*'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_REFERER' => 'http://123.56.88.15/sixGroup/web/index.php?r=login/index'
+    'HTTP_COOKIE' => '_csrf=1bbb9697c9ebcb7d483c51e83a77e060d297613f064caa0e086a50750e06c6eba%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%220Og4lVgLkZjwSeonYLm3i3z30TcUvxNh%22%3B%7D; PHPSESSID=308lvr4mv4eep22bcckvds1u95'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'PHP_SELF' => '/sixGroup/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1469489175.1116
+    'REQUEST_TIME' => 1469489175
+]
+2016-07-25 23:26:15 [114.249.224.175][-][-][warning][yii\web\Session::init] Session is already started
+    in /usr/share/nginx/html/sixGroup/controllers/LoginController.php:42
+2016-07-25 23:26:15 [114.249.224.175][-][-][info][application] $_GET = [
+    'r' => 'login/vcode'
+    'rand' => '0.5971588292772013'
+]
+
+$_COOKIE = [
+    '_csrf' => '1bbb9697c9ebcb7d483c51e83a77e060d297613f064caa0e086a50750e06c6eba:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"0Og4lVgLkZjwSeonYLm3i3z30TcUvxNh\";}'
+    'PHPSESSID' => '308lvr4mv4eep22bcckvds1u95'
+]
+
+$_SESSION = [
+    'code' => 'HfEr'
+    '__flash' => []
+]
+
+$_SERVER = [
+    'USER' => 'apache'
+    'HOME' => '/usr/share/httpd'
+    'FCGI_ROLE' => 'RESPONDER'
+    'SCRIPT_FILENAME' => '/usr/share/nginx/html//sixGroup/web/index.php'
+    'QUERY_STRING' => 'r=login/vcode&rand=0.5971588292772013'
+    'REQUEST_METHOD' => 'GET'
+    'CONTENT_TYPE' => ''
+    'CONTENT_LENGTH' => ''
+    'SCRIPT_NAME' => '/sixGroup/web/index.php'
+    'REQUEST_URI' => '/sixGroup/web/index.php?r=login/vcode&rand=0.5971588292772013'
+    'DOCUMENT_URI' => '/sixGroup/web/index.php'
+    'DOCUMENT_ROOT' => '/etc/nginx/html'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_SCHEME' => 'http'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_SOFTWARE' => 'nginx/1.10.1'
+    'REMOTE_ADDR' => '114.249.224.175'
+    'REMOTE_PORT' => '49920'
+    'SERVER_ADDR' => '123.56.88.15'
+    'SERVER_PORT' => '80'
+    'SERVER_NAME' => 'localhost'
+    'REDIRECT_STATUS' => '200'
+    'HTTP_HOST' => '123.56.88.15'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:47.0) Gecko/20100101 Firefox/47.0'
+    'HTTP_ACCEPT' => '*/*'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_REFERER' => 'http://123.56.88.15/sixGroup/web/index.php?r=login/index'
+    'HTTP_COOKIE' => '_csrf=1bbb9697c9ebcb7d483c51e83a77e060d297613f064caa0e086a50750e06c6eba%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%220Og4lVgLkZjwSeonYLm3i3z30TcUvxNh%22%3B%7D; PHPSESSID=308lvr4mv4eep22bcckvds1u95'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'PHP_SELF' => '/sixGroup/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1469489175.2693
+    'REQUEST_TIME' => 1469489175
+]
+2016-07-25 23:26:16 [114.249.224.175][-][-][warning][yii\web\Session::init] Session is already started
+    in /usr/share/nginx/html/sixGroup/controllers/LoginController.php:42
+2016-07-25 23:26:16 [114.249.224.175][-][-][info][application] $_GET = [
+    'r' => 'login/vcode'
+    'rand' => '0.680500507424968'
+]
+
+$_COOKIE = [
+    '_csrf' => '1bbb9697c9ebcb7d483c51e83a77e060d297613f064caa0e086a50750e06c6eba:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"0Og4lVgLkZjwSeonYLm3i3z30TcUvxNh\";}'
+    'PHPSESSID' => '308lvr4mv4eep22bcckvds1u95'
+]
+
+$_SESSION = [
+    'code' => '6Xw9'
+    '__flash' => []
+]
+
+$_SERVER = [
+    'USER' => 'apache'
+    'HOME' => '/usr/share/httpd'
+    'FCGI_ROLE' => 'RESPONDER'
+    'SCRIPT_FILENAME' => '/usr/share/nginx/html//sixGroup/web/index.php'
+    'QUERY_STRING' => 'r=login/vcode&rand=0.680500507424968'
+    'REQUEST_METHOD' => 'GET'
+    'CONTENT_TYPE' => ''
+    'CONTENT_LENGTH' => ''
+    'SCRIPT_NAME' => '/sixGroup/web/index.php'
+    'REQUEST_URI' => '/sixGroup/web/index.php?r=login/vcode&rand=0.680500507424968'
+    'DOCUMENT_URI' => '/sixGroup/web/index.php'
+    'DOCUMENT_ROOT' => '/etc/nginx/html'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_SCHEME' => 'http'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_SOFTWARE' => 'nginx/1.10.1'
+    'REMOTE_ADDR' => '114.249.224.175'
+    'REMOTE_PORT' => '49920'
+    'SERVER_ADDR' => '123.56.88.15'
+    'SERVER_PORT' => '80'
+    'SERVER_NAME' => 'localhost'
+    'REDIRECT_STATUS' => '200'
+    'HTTP_HOST' => '123.56.88.15'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:47.0) Gecko/20100101 Firefox/47.0'
+    'HTTP_ACCEPT' => '*/*'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_REFERER' => 'http://123.56.88.15/sixGroup/web/index.php?r=login/index'
+    'HTTP_COOKIE' => '_csrf=1bbb9697c9ebcb7d483c51e83a77e060d297613f064caa0e086a50750e06c6eba%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%220Og4lVgLkZjwSeonYLm3i3z30TcUvxNh%22%3B%7D; PHPSESSID=308lvr4mv4eep22bcckvds1u95'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'PHP_SELF' => '/sixGroup/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1469489176.1621
+    'REQUEST_TIME' => 1469489176
+]
+2016-07-25 23:26:17 [114.249.224.175][-][-][warning][yii\web\Session::init] Session is already started
+    in /usr/share/nginx/html/sixGroup/controllers/LoginController.php:42
+2016-07-25 23:26:17 [114.249.224.175][-][-][info][application] $_GET = [
+    'r' => 'login/vcode'
+    'rand' => '0.8686523770366016'
+]
+
+$_COOKIE = [
+    '_csrf' => '1bbb9697c9ebcb7d483c51e83a77e060d297613f064caa0e086a50750e06c6eba:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"0Og4lVgLkZjwSeonYLm3i3z30TcUvxNh\";}'
+    'PHPSESSID' => '308lvr4mv4eep22bcckvds1u95'
+]
+
+$_SESSION = [
+    'code' => 'Qt7j'
+    '__flash' => []
+]
+
+$_SERVER = [
+    'USER' => 'apache'
+    'HOME' => '/usr/share/httpd'
+    'FCGI_ROLE' => 'RESPONDER'
+    'SCRIPT_FILENAME' => '/usr/share/nginx/html//sixGroup/web/index.php'
+    'QUERY_STRING' => 'r=login/vcode&rand=0.8686523770366016'
+    'REQUEST_METHOD' => 'GET'
+    'CONTENT_TYPE' => ''
+    'CONTENT_LENGTH' => ''
+    'SCRIPT_NAME' => '/sixGroup/web/index.php'
+    'REQUEST_URI' => '/sixGroup/web/index.php?r=login/vcode&rand=0.8686523770366016'
+    'DOCUMENT_URI' => '/sixGroup/web/index.php'
+    'DOCUMENT_ROOT' => '/etc/nginx/html'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_SCHEME' => 'http'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_SOFTWARE' => 'nginx/1.10.1'
+    'REMOTE_ADDR' => '114.249.224.175'
+    'REMOTE_PORT' => '49920'
+    'SERVER_ADDR' => '123.56.88.15'
+    'SERVER_PORT' => '80'
+    'SERVER_NAME' => 'localhost'
+    'REDIRECT_STATUS' => '200'
+    'HTTP_HOST' => '123.56.88.15'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:47.0) Gecko/20100101 Firefox/47.0'
+    'HTTP_ACCEPT' => '*/*'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_REFERER' => 'http://123.56.88.15/sixGroup/web/index.php?r=login/index'
+    'HTTP_COOKIE' => '_csrf=1bbb9697c9ebcb7d483c51e83a77e060d297613f064caa0e086a50750e06c6eba%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%220Og4lVgLkZjwSeonYLm3i3z30TcUvxNh%22%3B%7D; PHPSESSID=308lvr4mv4eep22bcckvds1u95'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'PHP_SELF' => '/sixGroup/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1469489177.4828
+    'REQUEST_TIME' => 1469489177
+]
+2016-07-25 23:26:19 [114.249.224.175][-][-][warning][yii\web\Session::init] Session is already started
+    in /usr/share/nginx/html/sixGroup/controllers/LoginController.php:42
+2016-07-25 23:26:19 [114.249.224.175][-][-][info][application] $_GET = [
+    'r' => 'login/vcode'
+    'rand' => '0.18148910111600536'
+]
+
+$_COOKIE = [
+    '_csrf' => '1bbb9697c9ebcb7d483c51e83a77e060d297613f064caa0e086a50750e06c6eba:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"0Og4lVgLkZjwSeonYLm3i3z30TcUvxNh\";}'
+    'PHPSESSID' => '308lvr4mv4eep22bcckvds1u95'
+]
+
+$_SESSION = [
+    'code' => 'Wx4M'
+    '__flash' => []
+]
+
+$_SERVER = [
+    'USER' => 'apache'
+    'HOME' => '/usr/share/httpd'
+    'FCGI_ROLE' => 'RESPONDER'
+    'SCRIPT_FILENAME' => '/usr/share/nginx/html//sixGroup/web/index.php'
+    'QUERY_STRING' => 'r=login/vcode&rand=0.18148910111600536'
+    'REQUEST_METHOD' => 'GET'
+    'CONTENT_TYPE' => ''
+    'CONTENT_LENGTH' => ''
+    'SCRIPT_NAME' => '/sixGroup/web/index.php'
+    'REQUEST_URI' => '/sixGroup/web/index.php?r=login/vcode&rand=0.18148910111600536'
+    'DOCUMENT_URI' => '/sixGroup/web/index.php'
+    'DOCUMENT_ROOT' => '/etc/nginx/html'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_SCHEME' => 'http'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_SOFTWARE' => 'nginx/1.10.1'
+    'REMOTE_ADDR' => '114.249.224.175'
+    'REMOTE_PORT' => '49920'
+    'SERVER_ADDR' => '123.56.88.15'
+    'SERVER_PORT' => '80'
+    'SERVER_NAME' => 'localhost'
+    'REDIRECT_STATUS' => '200'
+    'HTTP_HOST' => '123.56.88.15'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:47.0) Gecko/20100101 Firefox/47.0'
+    'HTTP_ACCEPT' => '*/*'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_REFERER' => 'http://123.56.88.15/sixGroup/web/index.php?r=login/index'
+    'HTTP_COOKIE' => '_csrf=1bbb9697c9ebcb7d483c51e83a77e060d297613f064caa0e086a50750e06c6eba%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%220Og4lVgLkZjwSeonYLm3i3z30TcUvxNh%22%3B%7D; PHPSESSID=308lvr4mv4eep22bcckvds1u95'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'PHP_SELF' => '/sixGroup/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1469489179.6404
+    'REQUEST_TIME' => 1469489179
+]

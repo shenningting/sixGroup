@@ -73,7 +73,7 @@ class wechatCallbackapiTest
                             </xml>";
             if($postObj->Event=="CLICK"){
                 //获取城市名字
-               /* $ip = $_SERVER['SERVER_ADDR'];
+               $ip = $_SERVER['SERVER_ADDR'];
                 $url = "http://api.jisuapi.com/ip/location?appkey=49f049d351201fa6&ip=$ip";
                 $ch = curl_init();   //1.初始化
                 curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
@@ -95,8 +95,8 @@ class wechatCallbackapiTest
                 $msgType = "text";
                 $contentStr = $weather_str;
                 echo sprintf($textTpl, $fromUsername, $toUsername, $time, $msgType, $contentStr);
-                die;*/
-                $media_id = $_SESSION['medisID'];
+                die;
+               /* $media_id = $_SESSION['medisID'];
                 if($media_id=='') {
                     $Accesstoken = $this->getAccesstoken();
                     $url = "https://api.weixin.qq.com/cgi-bin/media/upload?access_token=" . $Accesstoken . "&type=image";
@@ -120,7 +120,7 @@ class wechatCallbackapiTest
                 $msgType = "image";
                 $contentStr = $media_id;
                 $resultStr = sprintf($textTpl, $fromUsername, $toUsername, $time, $msgType, $contentStr);
-                echo $resultStr;
+                echo $resultStr;*/
             }else{
                 $keyword = trim($postObj->Content);
                 if ($keyword != "") {
@@ -140,7 +140,7 @@ class wechatCallbackapiTest
                                 <item>
                                 <Title><![CDATA[".$v['retitle']."]]></Title>
                                 <Description><![CDATA[".$v['grdesc']."]]></Description>
-                                <PicUrl><![CDATA[http://123.56.88.15/shen/sixGroup/web/".$v['grurl']."]]></PicUrl>
+                                <PicUrl><![CDATA[http://123.56.88.15/sixGroup/web/".$v['grurl']."]]></PicUrl>
                                 <Url><![CDATA[".'http://www.baidu.com'."]]></Url>
                                 </item>
                                 </Articles>
@@ -171,6 +171,14 @@ class wechatCallbackapiTest
                             echo $resultStr;
                         }
                     }
+                    $url_lina="http://www.tuling123.com/openapi/api?key=a96836abc36511c7244e14a82ce380bd&info=$keyword";
+                    $json = file_get_contents($url_lina);
+                    $arr=json_decode($json,true);
+                    $contentStr = $arr['text'];
+                    $msgType = "text";
+                    $resultStr = sprintf($textTpl, $fromUsername, $toUsername, $time, $msgType, $contentStr);
+                    echo $resultStr;
+
                 }else{
                     $msgType = "text";
                     $contentStr = "欢迎关注，期待我的好作品";

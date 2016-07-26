@@ -157,7 +157,7 @@ class MenuController extends Controller
             $str .= '{';
             $str .= '"type":"view",';
             $str .= '"name":"'.$v['mname'].'",';
-            $str .= '"url":"http://www.soso.com/"';
+            $str .= '"url":"'.$v['url'].'"';
             $str .= '},';
         }
         $str .= ']';
